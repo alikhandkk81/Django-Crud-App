@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <title>Show data page</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-3 text-primary">Django Crud App Users List</h1>
+      <table class="table table-border table-bordered text-center shadow border-dark">
+        <tr>
+          <th>User Id</th>
+          <th>User Name</th>
+          <th>User Email</th>
+          <th>User Password</th>
+          <th>Delete User</th>
+          <th>Update User</th>
+        </tr>
+        {% for user in users%}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.uname}}</td>
+            <td>{{user.uemail}}</td>
+            <td>{{user.upassword}}</td>
+            <td><a href="/delete/{{user.id}}" class="btn btn-danger btn-sm">Delete</a></td>
+            <td><a href="/update/{{user.id}}" class="btn btn-success btn-sm">Update</a></td>
+        </tr>
+        {%endfor%}
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <title>Django Crud App</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center text-primary">Django Crud App User Registration</h1>
+    <form method="POST" action="/" class="container mt-3">
+      {% csrf_token %}
+      <div class="form-group">
+        <label><b>User Name: </b></label>
+        {{form.uname}}
+      </div>
+      <div class="form-group">
+        <label><b>User Email: </b></label>
+        {{form.uemail}}
+      </div>
+      <div class="form-group">
+        <label><b>User Password: </b></label>
+        {{form.upassword}}
+      </div>
+      <button
+        type="submit"
+        name="insert"
+        value="Insert"
+        class="btn btn-primary"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+  </body>
+</html>
